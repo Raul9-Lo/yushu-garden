@@ -1,58 +1,9 @@
 {{ define "main" }}
-<!-- Hero -->
 <section class="home-hero">
     <div class="hero-content">
         <h1 class="hero-brand">花灯盏</h1>
         <p class="hero-brand-en">GlowGoblet</p>
         <p class="hero-tagline">光影装置艺术</p>
     </div>
-    <div class="hero-scroll">↓ 探索</div>
-</section>
-
-<!-- 三栏入口 -->
-<section class="sections-grid">
-    <a href="/city/" class="section-card">
-        <div class="section-icon">🌃</div>
-        <h3 class="section-title">城市光影</h3>
-        <p class="section-desc">光穿行街巷，勾勒城市轮廓</p>
-    </a>
-    <a href="/installation/" class="section-card">
-        <div class="section-icon">💡</div>
-        <h3 class="section-title">装置灯光</h3>
-        <p class="section-desc">空间中的光与影，艺术与技术的交汇</p>
-    </a>
-    <a href="/architecture/" class="section-card">
-        <div class="section-icon">🏗️</div>
-        <h3 class="section-title">建筑用光</h3>
-        <p class="section-desc">光改变建筑的表情</p>
-    </a>
-</section>
-
-<!-- 精选项目 -->
-{{ $projects := where .Site.RegularPages "Section" "projects" }}
-{{ if $projects }}
-<section class="featured-section">
-    <h2 class="featured-title">精选项目</h2>
-    {{ range first 3 $projects }}
-    <div class="project-card">
-        <div class="project-image">
-            {{ with .Params.image }}<img src="{{ . }}" alt="{{ $.Title }}">{{ else }}🕯️ 光影项目{{ end }}
-        </div>
-        <div class="project-info">
-            <div class="project-category">{{ .Params.category }}</div>
-            <h3 class="project-title">{{ .Title }}</h3>
-            <div class="project-meta">{{ .Params.location }} · {{ .Date.Format "2006" }}</div>
-            <p class="project-desc">{{ .Params.summary }}</p>
-            <a href="{{ .RelPermalink }}" class="project-link">光 → 查看项目</a>
-        </div>
-    </div>
-    {{ end }}
-</section>
-{{ end }}
-
-<!-- 品牌标语 -->
-<section class="brand-quote">
-    <p class="quote-en">"Light travels through the city"</p>
-    <p class="quote-cn">光影穿行街巷<br>以光为笔，勾勒城市轮廓</p>
 </section>
 {{ end }}

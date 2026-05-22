@@ -3,23 +3,13 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
-    <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+    <title>{{ .Site.Title }}</title>
+    <meta name="description" content="{{ .Site.Params.description }}">
     <link rel="stylesheet" href="/custom.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400&family=Noto+Sans+SC:wght@200;300;400&display=swap" rel="stylesheet">
 </head>
 <body>
-    <main>
-        {{ block "main" . }}{{ end }}
-    </main>
-    <footer class="site-footer">
-        <p>花灯盏 GlowGoblet © {{ now.Format "2006" }} · 
-        <a href="/city/">城市光影</a> · 
-        <a href="/installation/">装置灯光</a> · 
-        <a href="/architecture/">建筑用光</a> · 
-        <a href="/journal/">光影日志</a> · 
-        <a href="/about/">关于</a></p>
-    </footer>
+    <main>{{ block "main" . }}{{ end }}</main>
 </body>
 </html>
