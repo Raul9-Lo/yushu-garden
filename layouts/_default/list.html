@@ -1,0 +1,21 @@
+{{ define "main" }}
+<div class="archive-header">
+    <h1 class="archive-title">{{ .Title }}</h1>
+    <p class="archive-desc">{{ .Params.description }}</p>
+</div>
+
+<div class="archive-grid">
+    {{ range .Pages }}
+    <a href="{{ .RelPermalink }}" class="archive-card">
+        <div class="card-image">
+            {{ with .Params.image }}<img src="{{ . }}" alt="{{ .Title }}">{{ else }}🕯️{{ end }}
+        </div>
+        <div class="card-body">
+            <div class="card-category">{{ .Params.category }}</div>
+            <h3 class="card-title">{{ .Title }}</h3>
+            <p class="card-desc">{{ .Params.summary }}</p>
+        </div>
+    </a>
+    {{ end }}
+</div>
+{{ end }}

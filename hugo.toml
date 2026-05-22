@@ -1,8 +1,45 @@
 baseurl = "https://yushutan.top/"
 languageCode = "zh-CN"
 theme = "stack"
-title = "重新定義中…"
+title = "花灯盏 GlowGoblet"
 
 [taxonomies]
   category = "categories"
   tag = "tags"
+
+[params]
+  mainSections = ["projects"]
+  description = "光影装置艺术 · 城市叙事 · 建筑用光"
+
+  [params.sidebar]
+    avatar = ""
+    subtitle = "Light travels through the city"
+
+  dateFormat.published = "2006-01-02"
+
+[menu]
+  [[menu.main]]
+    identifier = "city"
+    name = "城市光影"
+    url = "/city/"
+    weight = 1
+  [[menu.main]]
+    identifier = "installation"
+    name = "装置灯光"
+    url = "/installation/"
+    weight = 2
+  [[menu.main]]
+    identifier = "architecture"
+    name = "建筑用光"
+    url = "/architecture/"
+    weight = 3
+  [[menu.main]]
+    identifier = "journal"
+    name = "光影日志"
+    url = "/journal/"
+    weight = 4
+  [[menu.main]]
+    identifier = "about"
+    name = "关于"
+    url = "/about/"
+    weight = 5
